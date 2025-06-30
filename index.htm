@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Market Pulse: Weekly Financial Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            max-height: 400px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    
+    <div class="bg-white">
+        <header class="text-center p-8 md:p-12" style="background-color: #387b5b;">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white">Global Market Pulse</h1>
+            <p class="text-lg md:text-xl mt-2 text-gray-200">A Visual Roundup for Investors | Week of June 30, 2025</p>
+        </header>
+
+        <main class="container mx-auto p-4 md:p-8">
+            
+            <section id="weekly-review" class="mb-12">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">The Week in Review: A Global Snapshot</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4" style="border-color: #5BA87C;">
+                        <h3 class="text-xl font-semibold text-gray-700">India</h3>
+                        <p class="text-5xl font-bold my-4 text-green-500">+2.0%</p>
+                        <p class="text-gray-600">Nifty50 registered a notable gain, driven by strong domestic sentiment.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4" style="border-color: #5BA87C;">
+                        <h3 class="text-xl font-semibold text-gray-700">United States</h3>
+                        <p class="text-5xl font-bold my-4 text-green-500">↗</p>
+                        <p class="text-gray-600">S&P 500 neared its all-time high as the tech sector continued its strong rally.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4" style="border-color: #5BA87C;">
+                        <h3 class="text-xl font-semibold text-gray-700">Europe</h3>
+                        <p class="text-5xl font-bold my-4 text-green-500">+1.56%</p>
+                        <p class="text-gray-600">EURO STOXX 50 ended the week positive after the ECB announced a rate cut.</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="india" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Deep Dive: India's Resilient Growth</h2>
+                <p class="text-center text-gray-600 mb-4">Despite geopolitical murmurs, strong domestic fundamentals and positive economic forecasts bolstered the Indian market.</p>
+                <p class="text-center text-gray-600 mb-8">The Indian market continues to exhibit strong bullish momentum, fueled by robust domestic demand and consistent positive sentiment. This past week saw healthy Foreign Institutional Investor (FII) buying, signaling global confidence in India's growth story. Furthermore, a series of successful Initial Public Offerings (IPOs) and strategic fundraising through promoter stake selling have injected fresh capital into the market, contributing to the overall positive investment environment and indicating strong investor appetite for quality Indian assets.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">RBI's Economic Projections (FY 2025-26)</h3>
+                        <div class="chart-container">
+                            <canvas id="rbiProjectionsChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">The RBI's optimistic outlook, including a recent repo rate reduction, signals a focus on maintaining growth momentum alongside price stability.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Market Volatility Declines</h3>
+                        <div class="chart-container">
+                            <canvas id="indiaVixChart"></canvas>
+                        </div>
+                         <p class="text-center text-gray-600 mt-4">A 1.6% drop in the India VIX indicates reduced market anxiety and growing investor confidence, a positive sign for market stability.</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="usa" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">U.S. Markets: Tech Rallies Amid Inflation Watch</h2>
+                <p class="text-center text-gray-600 mb-8">U.S. equities showed strength, but a hotter-than-expected core inflation reading keeps the Federal Reserve's policy path in sharp focus.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">S&P 500 Weekly Trend</h3>
+                        <div class="chart-container">
+                            <canvas id="sp500Chart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">The S&P 500 continued its climb, driven by a powerful performance in the technology sector, bringing it close to record highs.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                         <h3 class="text-xl font-semibold text-gray-700 mb-4">Fed Rate Cut Expectations</h3>
+                        <div class="chart-container h-64 md:h-80">
+                            <canvas id="fedRateCutChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">While a July rate cut seems unlikely (22% chance), markets are overwhelmingly pricing in a cut by September (92% chance).</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="europe" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Europe: Cautious Optimism with ECB Easing</h2>
+                <p class="text-center text-gray-600 mb-8">The European Central Bank's move to cut interest rates provided a boost to markets, though challenges in the manufacturing sector persist.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">ECB Key Interest Rate</h3>
+                        <div class="flex justify-center items-center h-full">
+                             <div class="text-center">
+                                <p class="text-7xl font-extrabold" style="color:#387b5b;">2.15%</p>
+                                <p class="text-lg font-semibold text-gray-700 mt-2">Main Refinancing Rate</p>
+                             </div>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">The ECB's decision to lower its key rate signals a commitment to supporting the Eurozone economy.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Eurozone Sector Performance (PMI)</h3>
+                        <div class="chart-container">
+                            <canvas id="europePmiChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">A divergence is visible: the services sector shows expansion while manufacturing continues to contract, painting a mixed economic picture.</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="themes" class="mb-12">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Global Headwinds: Key Themes to Watch</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-center mb-4" style="color:#387b5b;">🛢️ Geopolitics & Oil</h3>
+                        <p class="text-gray-600">The fluid situation in the Middle East poses a risk to crude oil stability. Renewed conflict could trigger price spikes, impacting global inflation and putting pressure on energy-sensitive sectors like airlines and manufacturing.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-center mb-4" style="color:#387b5b;">🚢 Trade & Tariffs</h3>
+                        <p class="text-gray-600">Ongoing trade friction between the US, China, and India remains a key concern. The threat of new tariffs could disrupt global supply chains, increase business costs, and lead to a more cautious investment climate worldwide.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-center mb-4" style="color:#387b5b;">🏦 Central Bank Policy</h3>
+                        <p class="text-gray-600">A divergence is emerging: the ECB is easing while the Fed holds steady. This policy gap can drive currency fluctuations and capital flows, with potential impacts on emerging markets as investors react to changing interest rate differentials.</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="stock-specifics" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">India: Stock-Specific Long & Short Positions</h2>
+                <p class="text-center text-gray-600 mb-8">Analyzing shifts in long and short positions for key Indian stocks over the past week (June 23-29) provides insights into investor sentiment and potential near-term movements.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Top Long Additions (Past Week)</h3>
+                        <div class="chart-container">
+                            <canvas id="indiaLongsChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">These Indian equities saw notable additions to long positions, indicating increased bullish conviction among market participants.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Top Short Additions (Past Week)</h3>
+                        <div class="chart-container">
+                            <canvas id="indiaShortsChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Conversely, these stocks experienced a rise in short interest, suggesting a more cautious or bearish outlook from some investors.</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="commodity-outlook" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">The Week Ahead: Commodity Outlook</h2>
+                <p class="text-center text-gray-600 mb-8">Key commodity movements will play a crucial role in shaping market dynamics over the next week.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4" style="border-color: #387b5b;">
+                        <h3 class="text-xl font-semibold text-gray-700">US Dollar Index (DXY)</h3>
+                        <p class="text-4xl font-bold my-4 text-red-500">97.12 <span class="text-sm font-normal text-red-500">▼ 0.03%</span></p>
+                        <p class="text-gray-600">A stronger USD could weigh on emerging market currencies and commodity prices, while a weaker USD might provide support.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4" style="border-color: #387b5b;">
+                        <h3 class="text-xl font-semibold text-gray-700">Crude Oil (WTI)</h3>
+                        <p class="text-4xl font-bold my-4 text-green-500">$65.58 <span class="text-sm font-normal text-green-500">▲ 0.55%</span></p>
+                        <p class="text-gray-600">Geopolitical tensions remain a key driver. Sustained higher crude prices could fuel inflation and impact growth globally.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4" style="border-color: #387b5b;">
+                        <h3 class="text-xl font-semibold text-gray-700">Gold ($/ounce)</h3>
+                        <p class="text-4xl font-bold my-4 text-red-500">↓ <span class="text-sm font-normal text-red-500">~2.3% (Past Week)</span></p>
+                        <p class="text-gray-600">Gold's movement will depend on safe-haven demand vs. shifting interest rate expectations and dollar strength.</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="ipos" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">India: Mainstream IPOs & Listings</h2>
+                <p class="text-center text-gray-600 mb-8">A look at upcoming Initial Public Offerings and recent stock listings in the Indian market.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Upcoming IPOs (Opening Soon)</h3>
+                        <ul class="space-y-4">
+                            <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #5BA87C;">
+                                <p class="font-bold text-lg text-gray-800">TechNova Solutions Ltd.</p>
+                                <p class="text-gray-600">Subscription: <span class="font-semibold">June 30 - July 3</span></p>
+                                <p class="text-gray-600">Issue Price: <span class="font-semibold">₹250 - ₹265 per share</span></p>
+                            </li>
+                            <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #5BA87C;">
+                                <p class="font-bold text-lg text-gray-800">GreenEnergy Corp.</p>
+                                <p class="text-gray-600">Subscription: <span class="font-semibold">July 2 - July 5</span></p>
+                                <p class="text-gray-600">Issue Price: <span class="font-semibold">₹120 - ₹130 per share</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Recent Listings (Next Week)</h3>
+                        <ul class="space-y-4">
+                            <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #8FD8AE;">
+                                <p class="font-bold text-lg text-gray-800">Innovate Pharma</p>
+                                <p class="text-gray-600">Expected Listing: <span class="font-semibold">July 1, 2025</span></p>
+                                <p class="text-gray-600">IPO Price: <span class="font-semibold">₹350</span> | Expected Listing Range: <span class="font-semibold">₹370 - ₹380</span></p>
+                            </li>
+                            <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #8FD8AE;">
+                                <p class="font-bold text-lg text-gray-800">Digital Connect Ltd.</p>
+                                <p class="text-gray-600">Expected Listing: <span class="font-semibold">July 4, 2025</span></p>
+                                <p class="text-gray-600">IPO Price: <span class="font-semibold">₹180</span> | Expected Listing Range: <span class="font-semibold">₹175 - ₹185</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="mutual-funds" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Mutual Funds: Navigating Your Investment Journey</h2>
+                <p class="text-center text-gray-600 mb-8">Mutual funds offer a powerful avenue for wealth creation, but strategic guidance is key to maximizing outcomes.</p>
+
+                <div class="mb-8 p-4 rounded-lg shadow-sm text-white" style="background-color: #387b5b;">
+                    <h3 class="text-xl font-semibold mb-2">Why Partner with a Mutual Fund Distributor like Sagestone?</h3>
+                    <p class="text-gray-200">In today's complex financial landscape, choosing the right mutual funds can be daunting. A seasoned mutual fund distributor like Sagestone brings invaluable expertise to the table. We provide personalized financial planning, help you navigate diverse fund categories, align your investments with your risk tolerance and financial goals, and ensure your portfolio is optimally structured for the best possible financial and investment outcomes. Our insights cut through market noise, offering clarity and strategic direction.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Mutual Fund Industry Growth (India - May 2025)</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #387b5b;">
+                            <p class="font-bold text-lg text-gray-800">Total AUM:</p>
+                            <p class="text-4xl font-bold my-2 text-green-600">₹72.20 Lakh Cr</p>
+                            <p class="text-gray-600">Month-on-month growth of <span class="font-semibold">3.14%</span> as of May 31, 2025 (AMFI Data).</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4 mt-4" style="border-color: #5BA87C;">
+                            <p class="font-bold text-lg text-gray-800">May SIP Contribution:</p>
+                            <p class="text-4xl font-bold my-2 text-green-600">₹26,688 Cr</p>
+                            <p class="text-gray-600">Reflecting continued disciplined investing through Systematic Investment Plans (AMFI Data).</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Top Performing Funds (Past Month - June 2025)</h3>
+                        <ul class="space-y-3">
+                            <li class="bg-gray-50 p-3 rounded-lg shadow-sm border-l-4" style="border-color: #387b5b;">
+                                <p class="font-bold text-lg text-gray-800">India Equity: Edelweiss Small Cap Fund (Direct - Growth)</p>
+                                <p class="text-gray-600">1-Month Returns: <span class="font-semibold text-green-600">+5.70%</span> (as of June 28, 2025)</p>
+                            </li>
+                            <li class="bg-gray-50 p-3 rounded-lg shadow-sm border-l-4" style="border-color: #387b5b;">
+                                <p class="font-bold text-lg text-gray-800">India Equity: Nippon India Small Cap Fund (Direct - Growth)</p>
+                                <p class="text-gray-600">1-Month Returns: <span class="font-semibold text-green-600">+4.64%</span> (as of June 28, 2025)</p>
+                            </li>
+                            <li class="bg-gray-50 p-3 rounded-lg shadow-sm border-l-4" style="border-color: #387b5b;">
+                                <p class="font-bold text-lg text-gray-800">Global Equity: Kotak NASDAQ 100 FOF (Direct - Growth)</p>
+                                <p class="text-gray-600">3-Month Returns: <span class="font-semibold text-green-600">+6.09%</span> (as of June 5, 2025)</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">New Fund Offerings (NFOs) in India (Next Week)</h3>
+                    <ul class="space-y-4">
+                        <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #5BA87C;">
+                            <p class="font-bold text-lg text-gray-800">JioBlackRock Liquid Fund</p>
+                            <p class="text-gray-600">Fund Type: <span class="font-semibold">Debt Scheme - Liquid Fund</span> | Risk: <span class="font-semibold text-green-600">Low</span></p>
+                            <p class="text-gray-600">Opening Date: <span class="font-semibold">June 30, 2025</span> | Closing Date: <span class="font-semibold">July 2, 2025</span></p>
+                            <p class="text-gray-600">Investor Profile: <span class="font-semibold">Ideal for short-term liquidity needs, preserving capital, and risk-averse investors. Suitable for parking emergency funds or short-term surplus cash.</span></p>
+                        </li>
+                        <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #5BA87C;">
+                            <p class="font-bold text-lg text-gray-800">ICICI Pru Nifty Private Bank Index Fund (Direct - Growth)</p>
+                            <p class="text-gray-600">Fund Type: <span class="font-semibold">Equity Index Fund - Sectoral</span> | Risk: <span class="font-semibold text-red-600">Very High</span></p>
+                            <p class="text-gray-600">Opening Date: <span class="font-semibold">July 1, 2025</span></p>
+                            <p class="text-gray-600">Investor Profile: <span class="font-semibold">Suitable for investors seeking exposure to the banking sector with a high-risk appetite and a long-term horizon (5+ years). Best for those confident in the sector's future.</span></p>
+                        </li>
+                         <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #5BA87C;">
+                            <p class="font-bold text-lg text-gray-800">SBI Nifty200 Momentum 30 Index Fund</p>
+                            <p class="text-gray-600">Fund Type: <span class="font-semibold">Equity Index Fund - Thematic/Factor</span> | Risk: <span class="font-semibold text-red-600">Very High</span></p>
+                            <p class="text-gray-600">Closing Date: <span class="font-semibold">July 3, 2025 (Open from June 23)</span></p>
+                            <p class="text-gray-600">Investor Profile: <span class="font-semibold">Aims for capital appreciation by investing in high-momentum stocks. For investors with a very high-risk tolerance and a long-term view, comfortable with potential volatility.</span></p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-8 p-4 rounded-lg text-center" style="background-color: #FFF2CC; border: 1px solid #FFD700;">
+                    <p class="font-bold text-red-700 text-lg">Statutory Warning:</p>
+                    <p class="text-red-700 text-sm mt-2">Mutual Fund Investments are subject to market risks, read all scheme related documents carefully. Past performance is not an indicator of future returns. The NAV of the schemes may go up or down depending upon the factors and forces affecting the securities market.</p>
+                </div>
+            </section>
+
+            
+            <section id="sagestone-value-prop" class="mb-12 p-6 md:p-8 rounded-lg shadow-lg text-center text-white" style="background-color: #387b5b;">
+                <h2 class="text-3xl font-bold mb-6">Why Sagestone?</h2>
+                <p class="mb-4">At Sagestone, we are committed to providing you with personalized financial advice and helping you navigate the evolving investment landscape. We will continue to monitor market trends and identify opportunities that align with your specific needs.</p>
+                <p class="font-semibold mb-6">To set up your free, one-to-one consultation, speak to a SageStone representative today between 9:00 AM and 6:00 PM or WhatsApp us at <span class="font-bold text-white">+91-97403 88591</span>.</p>
+                <p class="font-bold text-xl mt-8">Sincerely,</p>
+                <p class="text-lg">Deb Pramanik</p>
+                <p class="text-md">Founder, Sagestone</p>
+                <p class="text-sm">AMFI Registration Number: ARN-305306</p>
+            </section>
+
+        </main>
+        
+        <footer class="text-center p-6 bg-gray-800 text-gray-400 text-sm">
+            <p>This infographic is for informational purposes only and should not be considered investment advice. Data is sourced from the "Weekly Financial Outlook: June 30, 2025". Please consult with your financial advisor to discuss your specific portfolio.</p>
+            <p class="mt-2">&copy; 2025 Your Financial Advisory Team. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+<script>
+    // New color palette based on #387b5b
+    const sagestoneGreens = {
+        primary: '#387b5b', // Main Sagestone green
+        secondary: '#5BA87C', // Lighter green for accents
+        accent: '#8FD8AE', // Even lighter green/mint for highlights
+        light: '#BBD7FA', // Still using a light blue for very subtle elements or contrast with green text
+        dark: '#2A5D44' // Darker green for text/borders
+    };
+    
+    const chartTextColor = '#374151'; // Retaining dark grey for general text for readability
+
+    
+    const mandatoryTooltipOptions = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    function wrapLabel(str, maxWidth) {
+        if (str.length <= maxWidth) {
+            return str;
+        }
+        const words = str.split(' ');
+        let lines = [];
+        let currentLine = words[0];
+
+        for (let i = 1; i < words.length; i++) {
+            if ((currentLine + " " + words[i]).length > maxWidth) {
+                lines.push(currentLine);
+                currentLine = words[i];
+            } else {
+                currentLine += " " + words[i];
+            }
+        }
+        lines.push(currentLine);
+        return lines;
+    }
+
+
+    function initRbiProjectionsChart() {
+        const ctx = document.getElementById('rbiProjectionsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Projected GDP Growth', 'Projected CPI Inflation'],
+                datasets: [{
+                    label: 'RBI Projections (%)',
+                    data: [6.5, 3.7],
+                    backgroundColor: [sagestoneGreens.primary, sagestoneGreens.accent],
+                    borderColor: '#ffffff',
+                    borderWidth: 4,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: chartTextColor, font: { size: 14 } }
+                    },
+                    title: {
+                        display: false,
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    }
+
+    
+    function initIndiaVixChart() {
+        const ctx = document.getElementById('indiaVixChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['India VIX Change'],
+                datasets: [{
+                    label: 'Weekly Change (%)',
+                    data: [-1.6],
+                    backgroundColor: sagestoneGreens.secondary,
+                    borderColor: sagestoneGreens.dark,
+                    borderWidth: 1,
+                    borderRadius: 4,
+                    barPercentage: 0.5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: {size: 14} },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    }
+
+    
+    function initSP500Chart() {
+        const ctx = document.getElementById('sp500Chart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                datasets: [{
+                    label: 'S&P 500 Performance',
+                    data: [6080, 6095, 6120, 6141, 6141],
+                    fill: true,
+                    backgroundColor: 'rgba(56, 123, 91, 0.2)',
+                    borderColor: sagestoneGreens.secondary,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { 
+                        beginAtZero: false,
+                        ticks: { color: chartTextColor },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    x: { 
+                        ticks: { color: chartTextColor },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    }
+
+    
+    function initFedRateCutChart() {
+        const ctx = document.getElementById('fedRateCutChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Rate Cut by July', 'Rate Cut by September'],
+                datasets: [{
+                    label: 'Probability (%)',
+                    data: [22, 92],
+                    backgroundColor: [sagestoneGreens.accent, sagestoneGreens.dark],
+                    borderColor: '#ffffff',
+                    borderWidth: 2,
+                    borderRadius: 4,
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    y: {
+                        ticks: { color: chartTextColor, font: { size: 14 } },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    }
+
+    
+    function initEuropePmiChart() {
+        const ctx = document.getElementById('europePmiChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Services (Expansion)', 'Manufacturing (Contraction)'],
+                datasets: [{
+                    label: 'PMI Reading (50 = Neutral)',
+                    data: [52.6, 48.5], 
+                    backgroundColor: (context) => {
+                        const value = context.dataset.data[context.dataIndex];
+                        return value > 50 ? sagestoneGreens.primary : sagestoneGreens.accent;
+                    },
+                    borderColor: sagestoneGreens.dark,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        suggestedMin: 45,
+                        suggestedMax: 55,
+                        ticks: { color: chartTextColor },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: {size: 14} },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    }
+
+    function initIndiaLongsChart() {
+        const ctx = document.getElementById('indiaLongsChart').getContext('2d');
+        const labels = [
+            wrapLabel('Reliance Industries', 16),
+            wrapLabel('ICICI Bank', 16),
+            wrapLabel('Larsen & Toubro', 16),
+            wrapLabel('Tata Motors', 16),
+            wrapLabel('HDFC Bank', 16)
+        ];
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Long Positions Added (%)',
+                    data: [3.5, 2.8, 2.5, 2.2, 1.9],
+                    backgroundColor: sagestoneGreens.primary,
+                    borderColor: sagestoneGreens.dark,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y', 
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    y: {
+                        ticks: { color: chartTextColor, font: { size: 14 } },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    }
+
+    function initIndiaShortsChart() {
+        const ctx = document.getElementById('indiaShortsChart').getContext('2d');
+        const labels = [
+            wrapLabel('Zee Entertainment', 16),
+            wrapLabel('Future Consumer', 16),
+            wrapLabel('Vodafone Idea', 16),
+            wrapLabel('Adani Power', 16),
+            wrapLabel('IndusInd Bank', 16)
+        ];
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Short Positions Added (%)',
+                    data: [4.1, 3.7, 3.2, 2.9, 2.5],
+                    backgroundColor: sagestoneGreens.accent,
+                    borderColor: sagestoneGreens.dark,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y', 
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    y: {
+                        ticks: { color: chartTextColor, font: { size: 14 } },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initRbiProjectionsChart();
+        initIndiaVixChart();
+        initSP500Chart();
+        initFedRateCutChart();
+        initEuropePmiChart();
+        initIndiaLongsChart(); 
+        initIndiaShortsChart();
+    });
+
+</script>
+
+</body>
+</html>
