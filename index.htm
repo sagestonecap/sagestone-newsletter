@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Market Pulse: Weekly Financial Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js Datalabels Plugin for showing numbers inside charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            max-height: 400px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        /* Specific styling for the smaller charts in the sector cards */
+        .sector-chart-container {
+            position: relative;
+            width: 100%;
+            height: 250px; /* Adjusted height for combined charts */
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Main Container for the Infographic -->
+    <div class="bg-white">
+        <!-- Header Section -->
+        <header class="text-center p-8 md:p-12" style="background-color: #387b5b;">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white">Global Market Pulse</h1>
+            <p class="text-lg md:text-xl mt-2 text-gray-200">A Visual Roundup for Investors | Week of July 7, 2025</p>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="container mx-auto p-4 md:p-8">
+            
+            <!-- Weekly Review Section -->
+            <section id="weekly-review" class="mb-12">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">The Week in Review: A Global Snapshot</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4" style="border-color: #5BA87C;">
+                        <h3 class="text-xl font-semibold text-gray-700">India</h3>
+                        <p class="text-5xl font-bold my-4 text-green-500">+1.8%</p>
+                        <p class="text-gray-600">Nifty50 maintained its upward trajectory, fueled by continued domestic inflows.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4" style="border-color: #5BA87C;">
+                        <h3 class="text-xl font-semibold text-gray-700">United States</h3>
+                        <p class="text-5xl font-bold my-4 text-green-500">↗</p>
+                        <p class="text-gray-600">S&P 500 hit a new all-time high, with strong earnings reports boosting sentiment.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4" style="border-color: #5BA87C;">
+                        <h3 class="text-xl font-semibold text-gray-700">Europe</h3>
+                        <p class="text-5xl font-bold my-4 text-green-500">+1.2%</p>
+                        <p class="text-gray-600">EURO STOXX 50 saw modest gains as manufacturing data showed signs of stabilization.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- India's Growth: World Bank Outlook Section -->
+            <section id="india-worldbank-outlook" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">India's Growth: World Bank Outlook</h2>
+                <p class="text-center text-gray-600 mb-8">The World Bank's latest "Global Economic Prospects: 2025" report highlights India as a standout performer among emerging markets, projecting robust growth driven by strong domestic demand and public investment. The report underscores India's resilience amidst global headwinds, attributing its sustained growth to structural reforms and a favorable demographic dividend. This positive outlook positions India as a crucial contributor to global economic expansion in the coming years.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Projected GDP Growth (2025)</h3>
+                        <div class="chart-container">
+                            <canvas id="worldBankGDPChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">India is projected to significantly outpace global and emerging market growth, signaling its strong economic momentum.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Investment Growth in India</h3>
+                        <div class="chart-container">
+                            <canvas id="worldBankInvestmentChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Consistent growth in investment reflects increasing confidence and capital deployment in the Indian economy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Market Reaction to Favorable US Tariff Deal Section -->
+            <section id="tariff-deal-impact" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Market Reaction to Favorable US Tariff Deal</h2>
+                <p class="text-center text-gray-600 mb-4">A potential favorable tariff deal with the US could significantly boost Indian market sentiment, particularly for export-oriented sectors. Reduced tariffs would lower input costs and enhance the competitiveness of Indian goods in the US market, leading to increased trade volumes and higher corporate earnings. Conversely, some domestic industries that compete directly with US imports might experience increased competition. Overall, a positive resolution on tariffs is expected to be a net positive for the Indian economy, driving foreign investment and strengthening the rupee.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Export Potential Increase (Key Sectors)</h3>
+                        <div class="chart-container">
+                            <canvas id="tariffImpactChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Sectors like Textiles and Pharmaceuticals stand to gain significantly from reduced trade barriers.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Projected Bilateral Trade Volume (USD Bn)</h3>
+                        <div class="chart-container">
+                            <canvas id="tradeVolumeChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">A favorable deal is expected to accelerate the growth of trade between India and the US.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- USA Markets: H1 2025 Report Card & H2 Outlook Section -->
+            <section id="usa" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">U.S. Markets: H1 2025 Report Card & H2 Outlook</h2>
+                <p class="text-center text-gray-600 mb-4">The first half of 2025 saw the U.S. stock market deliver mixed but generally positive returns. The **Technology sector** continued its dominance, driven by strong AI adoption and robust earnings from mega-cap tech firms, making it the top-performing sector. **Healthcare** also showed resilience with innovation in biotech. On the other hand, **Energy** and **Utilities** lagged due to fluctuating commodity prices and rising interest rate concerns. Individual winners included NVIDIA, Microsoft, and Eli Lilly, while some traditional industrial and regional bank stocks faced headwinds.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8">
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">H1 2025 Sector Performance (%)</h3>
+                        <div class="chart-container">
+                            <canvas id="winningLosingSectorsChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Technology and Healthcare led the gains, while Energy and Utilities saw declines.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                         <h3 class="text-xl font-semibold text-gray-700 mb-4">US Dollar Index vs. 10-Year Bond Yield</h3>
+                        <div class="chart-container">
+                            <canvas id="usDollarBondYieldChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Tracking the correlation between the dollar's strength and government bond yields.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-4 mt-8">Second Half Outlook: Navigating Tariffs & Rates</h3>
+                <p class="text-center text-gray-600">Looking into the second half of 2025, investors should brace for potential volatility. The Federal Reserve's stance on interest rates, influenced by persistent inflation, will be a key determinant. Furthermore, the impact of **higher tariffs** on imported goods could introduce supply chain disruptions and increased costs for businesses, potentially dampening corporate profits in sectors reliant on global trade. Conversely, domestic manufacturing might see a slight boost. Investors may favor companies with strong balance sheets and less exposure to international trade uncertainties. Defensive sectors like consumer staples could gain traction if economic uncertainty rises.</p>
+            </section>
+
+            <!-- Global Headwinds: Key Themes to Watch Section -->
+            <section id="global-headwinds-analytics" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Global Headwinds: Analytical Deep Dive</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Oil Price Impact Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4" style="border-color: #387b5b;">
+                        <h3 class="text-2xl font-bold text-center mb-4" style="color:#387b5b;">🛢️ OPEC+ Decisions & Crude Oil Prices</h3>
+                        <p class="text-gray-600 mb-4">OPEC+'s recent decision to increase oil production could lead to a softening of crude oil prices. While this might ease inflationary pressures globally, a significant drop below **$60 per barrel (Brent crude)** could signal weakening global demand or an oversupply, potentially impacting energy sector stocks and overall economic growth. Lower oil prices generally benefit oil-importing nations like India, reducing import bills and potentially boosting consumer spending.</p>
+                        <div class="chart-container">
+                            <canvas id="oilPriceGDPChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Illustrative relationship between Brent Crude price and Global GDP Growth.</p>
+                    </div>
+                    <!-- AI Impact on Indian IT Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4" style="border-color: #5BA87C;">
+                        <h3 class="text-2xl font-bold text-center mb-4" style="color:#387b5b;">🤖 AI's Transformation of Indian IT</h3>
+                        <p class="text-gray-600 mb-4">Generative AI, exemplified by models like ChatGPT, is rapidly reshaping the business models of Indian IT firms. While concerns about job displacement for coders exist, the prevailing trend shows AI as an enabler, significantly enhancing productivity and accelerating time-to-market. Indian IT companies are investing heavily in upskilling their workforce, integrating AI tools into development cycles, and offering AI-driven solutions to clients, moving towards a more value-added, AI-augmented service delivery model.</p>
+                        <div class="chart-container">
+                            <canvas id="aiCoderProductivityChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">How Indian IT coders are leveraging AI (e.g., ChatGPT) to boost productivity and efficiency.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Commodity Outlook Section -->
+            <section id="commodity-outlook" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">The Week Ahead: Commodity Outlook</h2>
+                <p class="text-center text-gray-600 mb-8">Key commodity movements will play a crucial role in shaping market dynamics over the next week.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4" style="border-color: #387b5b;">
+                        <h3 class="text-xl font-semibold text-gray-700">US Dollar Index (DXY)</h3>
+                        <p class="text-4xl font-bold my-4 text-red-500">96.95 <span class="text-sm font-normal text-red-500">▼ 0.18%</span></p>
+                        <p class="text-gray-600">A stronger USD could weigh on emerging market currencies and commodity prices, while a weaker USD might provide support.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4" style="border-color: #387b5b;">
+                        <h3 class="text-xl font-semibold text-gray-700">Crude Oil (WTI)</h3>
+                        <p class="text-4xl font-bold my-4 text-green-500">$66.10 <span class="text-sm font-normal text-green-500">▲ 0.8%</span></p>
+                        <p class="text-gray-600">Geopolitical tensions remain a key driver. Sustained higher crude prices could fuel inflation and impact growth globally.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4" style="border-color: #387b5b;">
+                        <h3 class="text-xl font-semibold text-gray-700">Gold ($/ounce)</h3>
+                        <p class="text-4xl font-bold my-4 text-green-500">↑ <span class="text-sm font-normal text-green-500">~0.5% (Past Week)</span></p>
+                        <p class="text-gray-600">Gold's movement will depend on safe-haven demand vs. shifting interest rate expectations and dollar strength.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- India: Q1 FY25-26 Earnings & Sector Focus -->
+            <section id="stock-specifics" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">India: Q1 FY25-26 Earnings & Sector Focus</h2>
+                <p class="text-center text-gray-600 mb-8">The Q1 FY 2025-26 earnings season is set to kick off next week, with several mainstream companies expected to publish their results. This quarter's performance will be crucial in setting the tone for the market, offering insights into corporate health amidst evolving economic conditions. Key companies to watch include **TCS, Infosys, HDFC Bank, ICICI Bank, and Reliance Industries**, among others, as their results will likely influence broader market sentiment.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Indian Banking Sector Outlook Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4" style="border-color: #387b5b;">
+                        <h3 class="text-2xl font-bold text-center mb-4" style="color:#387b5b;">🏦 Indian Banking Sector Performance (Q1 FY25-26)</h3>
+                        <p class="text-gray-600 mb-4">The banking sector continues to show resilience, driven by credit growth and improving asset quality. Here's a look at top banks by market cap and their expected Q1 FY25-26 performance:</p>
+                        <div class="sector-chart-container">
+                            <canvas id="bankingCombinedChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-2 text-sm">Expected Earnings Growth (%) vs. Current P/E Ratio</p>
+                    </div>
+                    <!-- Indian IT Sector Outlook Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-l-4" style="border-color: #5BA87C;">
+                        <h3 class="text-2xl font-bold text-center mb-4" style="color:#387b5b;">💻 Indian IT Sector Performance (Q1 FY25-26)</h3>
+                        <p class="text-gray-600 mb-4">The IT sector faces global demand fluctuations but is buoyed by digital transformation deals. Here's a look at top IT firms by market cap and their expected Q1 FY25-26 performance:</p>
+                        <div class="sector-chart-container">
+                            <canvas id="itCombinedChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-2 text-sm">Expected Earnings Growth (%) vs. Current P/E Ratio</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IPOs & Listings Section -->
+            <section id="ipos" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">India: Mainstream IPOs & Listings</h2>
+                <p class="text-center text-gray-600 mb-8">A look at upcoming Initial Public Offerings and recent stock listings in the Indian market.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Upcoming IPOs (Opening Soon)</h3>
+                        <ul class="space-y-4">
+                            <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #5BA87C;">
+                                <p class="font-bold text-lg text-gray-800">FinTech Innovators Ltd.</p>
+                                <p class="text-gray-600">Subscription: <span class="font-semibold">July 7 - July 10</span></p>
+                                <p class="text-gray-600">Issue Price: <span class="font-semibold">₹300 - ₹320 per share</span></p>
+                            </li>
+                            <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #5BA87C;">
+                                <p class="font-bold text-lg text-gray-800">AgroSolutions India</p>
+                                <p class="text-gray-600">Subscription: <span class="font-semibold">July 9 - July 12</span></p>
+                                <p class="text-gray-600">Issue Price: <span class="font-semibold">₹150 - ₹165 per share</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Recent Listings (Next Week)</h3>
+                        <ul class="space-y-4">
+                            <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #8FD8AE;">
+                                <p class="font-bold text-lg text-gray-800">TechNova Solutions Ltd.</p>
+                                <p class="text-gray-600">Listed: <span class="font-semibold">July 3, 2025</span></p>
+                                <p class="text-gray-600">IPO Price: <span class="font-semibold">₹260</span> | Listing Price: <span class="font-semibold">₹285 (+9.6%)</span></p>
+                            </li>
+                            <li class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4" style="border-color: #8FD8AE;">
+                                <p class="font-bold text-lg text-gray-800">GreenEnergy Corp.</p>
+                                <p class="text-gray-600">Listed: <span class="font-semibold">July 8, 2025</span></p>
+                                <p class="text-gray-600">IPO Price: <span class="font-semibold">₹125</span> | Listing Price: <span class="font-semibold">₹122 (-2.4%)</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mutual Funds Section -->
+            <section id="mutual-funds" class="mb-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Mutual Funds: Navigating Your Investment Journey</h2>
+                <p class="text-center text-gray-600 mb-8">Mutual funds offer a powerful avenue for wealth creation, but strategic guidance is key to maximizing outcomes.</p>
+
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-4">Rise of Large & Midcap Funds (2025)</h3>
+                <p class="text-center text-gray-600 mb-6">In recent months, a notable trend in the Indian mutual fund landscape has been the increasing launch of 'Large and Midcap funds' by various Asset Management Companies (AMCs). These funds offer investors a blend of stability from large-cap companies and high growth potential from mid-cap companies, appealing to those seeking diversified exposure. This trend reflects AMCs' strategy to capture growth across market capitalizations and cater to evolving investor preferences.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Active Large & Midcap Funds (Jan-Jun 2025)</h3>
+                        <div class="chart-container">
+                            <canvas id="largeMidcapFundsChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Growth in the number of active Large & Midcap funds over the past 6 months.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">SIP Growth in Large & Midcap Funds (Jan-Jun 2025)</h3>
+                        <div class="chart-container">
+                            <canvas id="largeMidcapSIPGrowthChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Consistent increase in Systematic Investment Plan (SIP) contributions to these funds.</p>
+                    </div>
+                </div>
+
+               <div class="mt-8">
+                    <h3 class="text-xl font-semibold text-center text-gray-700 mb-4">New Fund Offerings (NFOs) in India (Next Week)</h3>
+                    <p class="text-center text-gray-600 mb-4">Investors can expect a diverse range of New Fund Offerings (NFOs) to open next week, providing opportunities across various asset classes and investment strategies. These NFOs are typically available for a limited subscription period, offering units at their initial face value before trading on the market. Keep an eye on the opening and closing dates to participate in these new investment avenues.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4 flex flex-col items-center text-center" style="border-color: #5BA87C;">
+                            <!-- Replace this src with your actual JM Financial AMC logo URL -->
+                            <img src="images/jmmf.jpg" alt="JM Financial AMC Logo" class="mb-4 rounded-md">
+                            <p class="font-bold text-lg text-gray-800">JM Large and Midcap Fund</p>
+                            <p class="text-gray-600 text-sm">Fund Type: <span class="font-semibold">Equity Scheme - Large & Midcap Fund</span></p>
+                            <p class="text-gray-600 text-sm">Risk: <span class="font-semibold text-red-600">Very High</span></p>
+                            <p class="text-gray-600 text-sm">Opening: <span class="font-semibold">July 8, 2025</span> | Closing: <span class="font-semibold">July 12, 2025</span></p>
+                            <p class="text-gray-600 text-sm mt-2">Investor Profile: <span class="font-semibold">Seeks long-term capital appreciation by investing in large and mid-cap companies.</span></p>
+                            <a href="https://mfs.kfintech.com/mfs/investorservices/onlinepurchase/mobilepurchaseconfirmation1.aspx?Mob=TkZP&qparam=OTExNjQ3&InvDistflag=VwAA" target="_blank" class="inline-block mt-4 px-6 py-2 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">Invest Now</a>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4 flex flex-col items-center text-center" style="border-color: #5BA87C;">
+                            <!-- Replace this src with your actual Nippon India AMC logo URL -->
+                            <img src="images/nipponmf.jpg" alt="Nippon India AMC Logo" class="mb-4 rounded-md">
+                            <p class="font-bold text-lg text-gray-800">NIPPON INDIA MNC FUND</p>
+                            <p class="text-gray-600 text-sm">Fund Type: <span class="font-semibold">Equity Scheme - Thematic (MNC)</span></p>
+                            <p class="text-gray-600 text-sm">Risk: <span class="font-semibold text-red-600">Very High</span></p>
+                            <p class="text-gray-600 text-sm">Opening: <span class="font-semibold">July 10, 2025</span> | Closing: <span class="font-semibold">July 15, 2025</span></p>
+                            <p class="text-gray-600 text-sm mt-2">Investor Profile: <span class="font-semibold">Aims for capital appreciation by investing in multinational companies.</span></p>
+                            <a href="https://mfs.kfintech.com/mfs/investorservices/onlinepurchase/mobilepurchaseconfirmation1.aspx?Mob=TkZP&qparam=OTExNjQ5&InvDistflag=VwAA" target="_blank" class="inline-block mt-4 px-6 py-2 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">Invest Now</a>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4 flex flex-col items-center text-center" style="border-color: #5BA87C;">
+                            <!-- Replace this src with your actual Bajaj Finserv AMC logo URL -->
+                            <img src="images/bajajmf.svg" alt="Bajaj Finserv AMC Logo" class="mb-4 rounded-md">
+                            <p class="font-bold text-lg text-gray-800">Bajaj Finserv Small Cap Fund</p>
+                            <p class="text-gray-600 text-sm">Fund Type: <span class="font-semibold">Equity Scheme - Small Cap Fund</span></p>
+                            <p class="text-600 text-sm">Risk: <span class="font-semibold text-red-600">Very High</span></p>
+                            <p class="text-gray-600 text-sm">Opening: <span class="font-semibold">July 9, 2025</span> | Closing: <span class="font-semibold">July 13, 2025</span></p>
+                            <p class="text-gray-600 text-sm mt-2">Investor Profile: <span class="font-semibold">Seeks high growth potential by investing in small-cap companies.</span></p>
+                            <a href="https://mfs.kfintech.com/mfs/investorservices/onlinepurchase/mobilepurchaseconfirmation1.aspx?Mob=TkZP&qparam=OTExNjUw&InvDistflag=VwAA" target="_blank" class="inline-block mt-4 px-6 py-2 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">Invest Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 p-4 rounded-lg text-center" style="background-color: #FFF2CC; border: 1px solid #FFD700;">
+                    <p class="font-bold text-red-700 text-lg">Statutory Warning:</p>
+                    <p class="text-red-700 text-sm mt-2">Mutual Fund Investments are subject to market risks, read all scheme related documents carefully. Past performance is not an indicator of future returns. The NAV of the schemes may go up or down depending upon the factors and forces affecting the securities market.</p>
+                </div>
+            </section>
+
+            
+            <section id="sagestone-value-prop" class="mb-12 p-6 md:p-8 rounded-lg shadow-lg text-center text-white" style="background-color: #387b5b;">
+                <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 24px; color: #ffffff;">Why Sagestone?</h2>
+                <p style="margin-bottom: 16px; color: #ffffff;">At Sagestone, we are committed to providing you with personalized financial advice and helping you navigate the evolving investment landscape. We will continue to monitor market trends and identify opportunities that align with your specific needs.</p>
+                <p style="font-weight: 600; margin-bottom: 24px; color: #ffffff;">To set up your free, one-to-one consultation, speak to a SageStone representative today between 9:00 AM and 6:00 PM or WhatsApp us at <span class="whatsapp-text" style="font-weight: 700; color: #ffffff;">+91-97403 88591</span>.</p>
+                <p style="font-weight: 700; font-size: 20px; margin-top: 32px; color: #ffffff;">Sincerely,</p>
+                <p style="font-size: 18px; color: #ffffff;">Deb Pramanik</p>
+                <p style="font-size: 16px; color: #e5e7eb;">Founder, Sagestone</p>
+                           </section>
+
+        </main>
+        
+        <footer class="text-center p-6 bg-gray-800 text-gray-400 text-sm">
+            <p style="margin-bottom: 8px;">This infographic is for informational purposes only and is not intended as direct financial advice. Investment decisions should be made with careful consideration of your personal financial situation and goals. Data presented here is AI-generated and may contain unintentional errors or data mismatches. Viewers' discretion is advised. Sagestone and its associates are not to be held responsible for any inaccuracies or their consequences.</p>
+	<p class="mt-2">SageStone Capital is an AMFI registered Mutual Fund Distributor in India | Registration Number - ARN - 305306</p>	
+            <p class="mt-2">&copy; 2025 Sagestone. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+<script>
+    // Define Sagestone brand colors for consistent styling
+    const sagestoneGreens = {
+        primary: '#387b5b', // Dark green
+        secondary: '#5BA87C', // Medium green
+        accent: '#8FD8AE', // Light green
+        light: '#BBD7FA', // Very light blue (used for some backgrounds/accents)
+        dark: '#2A5D44' // Even darker green for borders/text
+    };
+    
+    // Define a consistent text color for chart labels and ticks
+    const chartTextColor = '#374151'; // Dark gray for better readability
+
+    // Mandatory Tooltip Options for Chart.js - ensures consistent tooltip behavior
+    const mandatoryTooltipOptions = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    // Helper function to wrap long labels for better display on charts
+    function wrapLabel(str, maxWidth) {
+        if (str.length <= maxWidth) {
+            return str;
+        }
+        const words = str.split(' ');
+        let lines = [];
+        let currentLine = words[0];
+
+        for (let i = 1; i < words.length; i++) {
+            if ((currentLine + " " + words[i]).length > maxWidth) {
+                lines.push(currentLine);
+                currentLine = words[i];
+            } else {
+                currentLine += " " + words[i];
+            }
+        }
+        lines.push(currentLine);
+        return lines;
+    }
+
+
+    // Initialize World Bank GDP Projections Chart
+    function initWorldBankGDPChart() {
+        const ctx = document.getElementById('worldBankGDPChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['India', 'Global', 'Emerging Markets'],
+                datasets: [{
+                    label: 'Projected GDP Growth (%)',
+                    data: [6.7, 2.8, 4.0], // Illustrative data for 2025
+                    backgroundColor: [sagestoneGreens.primary, sagestoneGreens.accent, sagestoneGreens.secondary],
+                    borderColor: sagestoneGreens.dark,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false },
+                    datalabels: { // Datalabels plugin configuration
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: (value) => value + '%',
+                        color: chartTextColor,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: {size: 14} },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels] // Register the datalabels plugin
+        });
+    }
+
+    // Initialize World Bank Investment Growth Chart
+    function initWorldBankInvestmentChart() {
+        const ctx = document.getElementById('worldBankInvestmentChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar', // Changed to bar chart for better datalabel display
+            data: {
+                labels: ['2023', '2024', '2025 (Proj.)'],
+                datasets: [{
+                    label: 'Investment Growth (%)',
+                    data: [8.5, 9.2, 10.5], // Illustrative data for India
+                    backgroundColor: sagestoneGreens.secondary, // Solid color for bars
+                    borderColor: sagestoneGreens.dark,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false },
+                    datalabels: { // Datalabels plugin configuration
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: (value) => value + '%',
+                        color: chartTextColor,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: chartTextColor },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: {size: 14} },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels] // Register the datalabels plugin
+        });
+    }
+
+    // Initialize Tariff Impact Chart
+    function initTariffImpactChart() {
+        const ctx = document.getElementById('tariffImpactChart').getContext('2d');
+        const labels = [
+            wrapLabel('Textiles', 12),
+            wrapLabel('Pharmaceuticals', 12),
+            wrapLabel('Gems & Jewelry', 12),
+            wrapLabel('Agri Products', 12)
+        ];
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Export Potential Increase (%)',
+                    data: [15, 10, 12, 8], // Illustrative data
+                    backgroundColor: sagestoneGreens.primary,
+                    borderColor: sagestoneGreens.dark,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal bars
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'right',
+                        formatter: (value) => value + '%',
+                        color: chartTextColor,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    y: {
+                        ticks: { color: chartTextColor, font: { size: 14 } },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
+    // Initialize Trade Volume Chart
+    function initTradeVolumeChart() {
+        const ctx = document.getElementById('tradeVolumeChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2023', '2024', '2025 (Proj.)'],
+                datasets: [{
+                    label: 'Bilateral Trade Volume (USD Bn)',
+                    data: [120, 135, 160], // Illustrative data in Billion USD
+                    fill: true,
+                    backgroundColor: 'rgba(56, 123, 91, 0.2)',
+                    borderColor: sagestoneGreens.secondary,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: (value) => value + ' Bn',
+                        color: chartTextColor,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + ' Bn'; },
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: {size: 14} },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
+    // New Chart for H1 2025 Sector Performance
+    function initWinningLosingSectorsChart() {
+        const ctx = document.getElementById('winningLosingSectorsChart').getContext('2d');
+        const labels = [
+            wrapLabel('Technology', 12),
+            wrapLabel('Healthcare', 12),
+            wrapLabel('Consumer Discretionary', 12),
+            wrapLabel('Financials', 12),
+            wrapLabel('Industrials', 12),
+            wrapLabel('Energy', 12),
+            wrapLabel('Utilities', 12)
+        ];
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'H1 2025 Performance (%)',
+                    data: [22, 15, 8, 5, -2, -7, -10], // Illustrative data
+                    backgroundColor: (context) => {
+                        const value = context.dataset.data[context.dataIndex];
+                        return value >= 0 ? sagestoneGreens.primary : sagestoneGreens.accent; // Green for positive, light green for negative
+                    },
+                    borderColor: sagestoneGreens.dark,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal bars
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'right',
+                        formatter: (value) => value > 0 ? '+' + value + '%' : value + '%',
+                        color: chartTextColor,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: false, // Allow negative values
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    y: {
+                        ticks: { color: chartTextColor, font: { size: 14 } },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
+    // New Chart for US Dollar vs Bond Yield
+    function initUsDollarBondYieldChart() {
+        const ctx = document.getElementById('usDollarBondYieldChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], // H1 2025
+                datasets: [
+                    {
+                        label: 'US Dollar Index (DXY)',
+                        data: [102.5, 103.1, 102.8, 103.5, 104.0, 103.8], // Illustrative DXY data
+                        borderColor: '#FF6384', // Reddish color for DXY
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: false,
+                        tension: 0.4,
+                        yAxisID: 'y-dxy'
+                    },
+                    {
+                        label: 'US 10-Year Bond Yield (%)',
+                        data: [4.2, 4.3, 4.1, 4.4, 4.5, 4.3], // Illustrative 10-year yield data
+                        borderColor: '#36A2EB', // Blueish color for yield
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: false,
+                        tension: 0.4,
+                        yAxisID: 'y-yield'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: chartTextColor, font: { size: 14 } }
+                    }
+                },
+                scales: {
+                    'y-dxy': {
+                        type: 'linear',
+                        position: 'left',
+                        beginAtZero: false,
+                        ticks: {
+                            color: chartTextColor
+                        },
+                        title: {
+                            display: true,
+                            text: 'US Dollar Index (DXY)',
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    'y-yield': {
+                        type: 'linear',
+                        position: 'right',
+                        beginAtZero: false,
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        title: {
+                            display: true,
+                            text: '10-Year Bond Yield (%)',
+                            color: chartTextColor
+                        },
+                        grid: { drawOnChartArea: false } // Only draw grid lines for the left axis
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: {size: 14} },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
+
+    // New Chart for Oil Price vs Global GDP
+    function initOilPriceGDPChart() {
+        const ctx = document.getElementById('oilPriceGDPChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024', 'Q1 2025', 'Q2 2025'],
+                datasets: [
+                    {
+                        label: 'Brent Crude Price ($/barrel)',
+                        data: [85, 82, 78, 75, 70, 68], // Illustrative data
+                        borderColor: '#FF6384', // Reddish color for oil price
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: false,
+                        tension: 0.4,
+                        yAxisID: 'y-price'
+                    },
+                    {
+                        label: 'Global GDP Growth (%)',
+                        data: [2.5, 2.6, 2.4, 2.3, 2.2, 2.1], // Illustrative data
+                        borderColor: '#36A2EB', // Blueish color for GDP
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: false,
+                        tension: 0.4,
+                        yAxisID: 'y-gdp'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: chartTextColor, font: { size: 14 } }
+                    }
+                },
+                scales: {
+                    'y-price': {
+                        type: 'linear',
+                        position: 'left',
+                        beginAtZero: false,
+                        ticks: {
+                            callback: function(value) { return '$' + value; },
+                            color: chartTextColor
+                        },
+                        title: {
+                            display: true,
+                            text: 'Crude Price ($/barrel)',
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    'y-gdp': {
+                        type: 'linear',
+                        position: 'right',
+                        beginAtZero: false,
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        title: {
+                            display: true,
+                            text: 'Global GDP Growth (%)',
+                            color: chartTextColor
+                        },
+                        grid: { drawOnChartArea: false } // Only draw grid lines for the left axis
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: {size: 14} },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
+    // New Chart for AI Impact on Coder Productivity
+    function initAiCoderProductivityChart() {
+        const ctx = document.getElementById('aiCoderProductivityChart').getContext('2d');
+        const labels = [
+            wrapLabel('Productivity Increase', 16),
+            wrapLabel('Time-to-Market Reduction', 16),
+            wrapLabel('Code Quality Improvement', 16)
+        ];
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Impact (%)',
+                    data: [35, 25, 20], // Illustrative data: 35% productivity, 25% faster TTM, 20% quality
+                    backgroundColor: [sagestoneGreens.primary, sagestoneGreens.secondary, sagestoneGreens.accent],
+                    borderColor: sagestoneGreens.dark,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal bars
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'right',
+                        formatter: (value) => value + '%',
+                        color: chartTextColor,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100, // Max percentage
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    y: {
+                        ticks: { color: chartTextColor, font: { size: 14 } },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
+    // New Combined Chart for Banking Sector
+    function initBankingCombinedChart() {
+        const ctx = document.getElementById('bankingCombinedChart').getContext('2d');
+        const labels = [
+            wrapLabel('HDFC Bank', 12),
+            wrapLabel('ICICI Bank', 12),
+            wrapLabel('State Bank of India', 12),
+            wrapLabel('Axis Bank', 12),
+            wrapLabel('Kotak Mahindra Bank', 12)
+        ];
+        new Chart(ctx, {
+            type: 'bar', // Start with bar for primary data (growth)
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Expected Growth (%)',
+                        data: [18, 15, 12, 16, 14], // Illustrative growth data
+                        backgroundColor: sagestoneGreens.primary,
+                        borderColor: sagestoneGreens.dark,
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        yAxisID: 'y-growth'
+                    },
+                    {
+                        type: 'line', // Overlay with line for secondary data (P/E)
+                        label: 'Current P/E',
+                        data: [22, 19, 14, 17, 25], // Illustrative P/E data
+                        borderColor: '#FF6384', // Different color for P/E line
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: false,
+                        tension: 0.4,
+                        yAxisID: 'y-pe',
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end',
+                            formatter: (value) => value + 'x',
+                            color: '#FF6384', // Color for P/E datalabels
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal bars
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: chartTextColor, font: { size: 14 } }
+                    },
+                    datalabels: { // Default datalabels for growth bars
+                        anchor: 'end',
+                        align: 'right',
+                        formatter: (value, context) => {
+                            // Only show for the first dataset (growth)
+                            if (context.datasetIndex === 0) {
+                                return value + '%';
+                            }
+                            return ''; // Hide for the second dataset (P/E, as it has its own config)
+                        },
+                        color: chartTextColor,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    'y-growth': {
+                        position: 'left',
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        title: {
+                            display: true,
+                            text: 'Growth (%)',
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    'y-pe': {
+                        position: 'right',
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + 'x'; },
+                            color: '#FF6384' // Color for P/E axis ticks
+                        },
+                        title: {
+                            display: true,
+                            text: 'P/E Ratio',
+                            color: '#FF6384' // Color for P/E axis title
+                        },
+                        grid: { drawOnChartArea: false } // Only draw grid lines for the left axis
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: { size: 12 } },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
+    // New Combined Chart for IT Sector
+    function initITCombinedChart() {
+        const ctx = document.getElementById('itCombinedChart').getContext('2d');
+        const labels = [
+            wrapLabel('TCS', 12),
+            wrapLabel('Infosys', 12),
+            wrapLabel('HCLTech', 12),
+            wrapLabel('Wipro', 12),
+            wrapLabel('LTIMindtree', 12)
+        ];
+        new Chart(ctx, {
+            type: 'bar', // Start with bar for primary data (growth)
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Expected Growth (%)',
+                        data: [9, 10, 11, 7, 13], // Illustrative growth data
+                        backgroundColor: sagestoneGreens.primary,
+                        borderColor: sagestoneGreens.dark,
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        yAxisID: 'y-growth'
+                    },
+                    {
+                        type: 'line', // Overlay with line for secondary data (P/E)
+                        label: 'Current P/E',
+                        data: [30, 28, 24, 20, 35], // Illustrative P/E data
+                        borderColor: '#FF6384', // Different color for P/E line
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: false,
+                        tension: 0.4,
+                        yAxisID: 'y-pe',
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end',
+                            formatter: (value) => value + 'x',
+                            color: '#FF6384', // Color for P/E datalabels
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal bars
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: chartTextColor, font: { size: 14 } }
+                    },
+                    datalabels: { // Default datalabels for growth bars
+                        anchor: 'end',
+                        align: 'right',
+                        formatter: (value, context) => {
+                            // Only show for the first dataset (growth)
+                            if (context.datasetIndex === 0) {
+                                return value + '%';
+                            }
+                            return ''; // Hide for the second dataset (P/E, as it has its own config)
+                        },
+                        color: chartTextColor,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    'y-growth': {
+                        position: 'left',
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            color: chartTextColor
+                        },
+                        title: {
+                            display: true,
+                            text: 'Growth (%)',
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    'y-pe': {
+                        position: 'right',
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return value + 'x'; },
+                            color: '#FF6384' // Color for P/E axis ticks
+                        },
+                        title: {
+                            display: true,
+                            text: 'P/E Ratio',
+                            color: '#FF6384' // Color for P/E axis title
+                        },
+                        grid: { drawOnChartArea: false } // Only draw grid lines for the left axis
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: { size: 12 } },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
+    // New Chart for Active Large & Midcap Funds
+    function initLargeMidcapFundsChart() {
+        const ctx = document.getElementById('largeMidcapFundsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan 2025', 'Feb 2025', 'Mar 2025', 'Apr 2025', 'May 2025', 'Jun 2025'], // Past 6 months
+                datasets: [{
+                    label: 'Number of Active Funds',
+                    data: [30, 32, 33, 35, 36, 37], // Illustrative data
+                    borderColor: sagestoneGreens.primary,
+                    backgroundColor: 'rgba(56, 123, 91, 0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: (value) => value,
+                        color: chartTextColor,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: chartTextColor, precision: 0 },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: {size: 14} },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
+    // New Chart for SIP Growth in Large & Midcap Funds
+    function initLargeMidcapSIPGrowthChart() {
+        const ctx = document.getElementById('largeMidcapSIPGrowthChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan 2025', 'Feb 2025', 'Mar 2025', 'Apr 2025', 'May 2025', 'Jun 2025'], // Past 6 months
+                datasets: [{
+                    label: 'SIP Contribution (₹ Cr)',
+                    data: [1800, 1950, 2100, 2250, 2400, 2550], // Illustrative data in Crore Rupees
+                    backgroundColor: sagestoneGreens.secondary,
+                    borderColor: sagestoneGreens.dark,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...mandatoryTooltipOptions.plugins,
+                    legend: { display: false },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: (value) => '₹' + value + ' Cr',
+                        color: chartTextColor,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return '₹' + value + ' Cr'; },
+                            color: chartTextColor
+                        },
+                        grid: { color: '#e5e7eb' }
+                    },
+                    x: {
+                        ticks: { color: chartTextColor, font: {size: 14} },
+                        grid: { display: false }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
+
+    // Event listener to initialize all charts when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        initWorldBankGDPChart();
+        initWorldBankInvestmentChart();
+        initTariffImpactChart();
+        initTradeVolumeChart();
+        initWinningLosingSectorsChart(); 
+        initUsDollarBondYieldChart(); 
+        initOilPriceGDPChart(); 
+        initAiCoderProductivityChart(); 
+        initBankingCombinedChart(); 
+        initITCombinedChart();     
+        initLargeMidcapFundsChart(); 
+        initLargeMidcapSIPGrowthChart(); 
+    });
+
+</script>
+
+</body>
+</html>
